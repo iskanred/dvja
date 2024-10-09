@@ -22,11 +22,6 @@ jobs:
         with:
           args:
             --sarif-file-output=snyk.sarif .
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          checkout_path: .
-          sarif_file: snyk.sarif
       - name: Upload result to workflow artifacts
         uses: actions/upload-artifact@v3
         with:
